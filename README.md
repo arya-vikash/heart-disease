@@ -1,1 +1,1 @@
-# heart-disease
+# heart-detector.io

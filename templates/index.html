@@ -1,0 +1,125 @@
+<!-- This is GUI for Heart disease Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+     background-color: #e4eee2;
+    }
+
+    .form-card{
+      margin-top: 10vh;
+      background-color: #fff;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 10px 10px 10px #888;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      height: auto;
+    }
+    .result{
+            margin-top: 35px;
+        }
+    /* CSS code for button */
+        .btn{
+          margin-top: 20px;
+          width: 40%;
+        }
+    
+
+  </style>
+
+</head>
+
+<body>
+
+	
+    <!-- Get input for predict the  heart disease -->
+
+         <div class="container">
+
+           <center>
+             <div class="row">
+               <div class="col-12">
+                <h1 style="color: rgb(238, 75, 0);font-size: 350%;margin-top: 5vh;">Heart Disease Prediction</h1>
+               </div>
+             </div>
+           <div class="row">
+             <div class="col-12 col-md-6 offset-md-3 form-card">
+              <form action="{{ url_for('predict')}}"method="post"  style="margin-top: 40px;">
+       
+                                        
+                                    
+
+                <h1>Enter the value of heart features</h1>
+                
+              <input type="text" name="age" placeholder="age" required="required" />
+                <input type="text" name="trestbps" placeholder="trestbps" required="required" />
+            <input type="text" name="chol" placeholder="chol" required="required" />
+                <input type="text" name="thalach" placeholder="thalach" required="required" />
+                    <input type="text" name="oldpeak" placeholder="oldpeak" required="required" />
+
+              <input type="text" name="sex_0" placeholder="sex_0" required="required" />
+                <input type="text" name="sex_1" placeholder="sex_1" required="required" />
+            <input type="text" name="cp_0" placeholder="cp_0" required="required" />
+                <input type="text" name=" cp_1" placeholder=" cp_1" required="required" />
+                    <input type="text" name="cp_2" placeholder="cp_2" required="required" />
+              
+
+              <input type="text" name="cp_3" placeholder=" cp_3" required="required" />
+                <input type="text" name="fbs_0" placeholder="fbs_0" required="required" />
+            <input type="text" name="restecg_0" placeholder="restecg_0" required="required" />
+                <input type="text" name="restecg_1" placeholder="restecg_1" required="required" />
+                    <input type="text" name="restecg_2" placeholder="restecg_2" required="required" />
+   
+              <input type="text" name="exang_0" placeholder="exang_0" required="required" />
+                <input type="text" name="exang_1" placeholder="exang_1" required="required" />
+            <input type="text" name=" slope_0" placeholder=" slope_0" required="required" />
+                <input type="text" name=" slope_1" placeholder="slope_1" required="required" />
+            <input type="text" name="  slope_2" placeholder=" slope_2" required="required" />
+              
+                
+
+        
+        
+              
+              <input type="text" name=" ca_0" placeholder=" ca_0" required="required" />
+                <input type="text" name="ca_1" placeholder="ca_1" required="required" />
+            <input type="text" name="ca_2" placeholder="ca_2" required="required" />
+                <input type="text" name=" thal_1" placeholder="thal_1" required="required" />
+            <input type="text" name="thal_2" placeholder="thal_2" required="required" />
+              
+
+              <input type="text" name="thal_3" placeholder="thal_3" required="required" />
+              <br>
+              <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Heart disease</strong></button>
+        
+            
+                
+            </form>
+             </div>
+             <div class="col-12 result">
+              <center>
+                <h1>{{ prediction_text }}</h1>
+              </center>
+           </div>
+           </center>
+           
+        </div>
+         </div>
+
+   
+   <!-- Show predicted output using ML model --> 
+   
+
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
